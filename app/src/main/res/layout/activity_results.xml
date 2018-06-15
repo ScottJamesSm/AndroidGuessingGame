@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultsActivity">
+
+    <TextView
+        android:id="@+id/results_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Won"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/number_textviewtextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="number was %1$d"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="277"
+        android:layout_height="277"
+        app:srcCompat="@drawable/thumb"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="117dp" />
+</android.support.constraint.ConstraintLayout>
