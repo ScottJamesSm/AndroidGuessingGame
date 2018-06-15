@@ -1,5 +1,6 @@
 package com.example.scottsmith.guessinggame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,17 +10,13 @@ import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
 
-
-
-
     private Button guessButton;
     private TextView clue;
     private EditText guess;
 
     private int generatedNumber;
-    private int numberOfGuessed = 0;
+    private int numberOfGuesses = 0;
     private final int MAX_GUESS_COUNT = 4;
-
 
 
     @Override
@@ -41,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
 
-        generatedNumber = (int) Math.ceil(Math.random() * 100)
+        generatedNumber = (int) Math.ceil(Math.random() * 100);
     }
 
     private void setListener() {
@@ -51,12 +48,33 @@ public class GameActivity extends AppCompatActivity {
                 validateGuess();
             }
         });
-        }
+    }
 
     private void validateGuess() {
 
 
     }
-}
 
-}
+    private void checkGuess(int userGuess) {
+        //tod
+        if (userGuess == generatedNumber) {
+
+        } else if (numberOfGuesses == MAX_GUESS_COUNT) {
+Intent loser = new Intent(this, ResultsActivity.class);
+        } else if (userGuess < generatedNumber) {
+
+            clue.setText(R.string.higher);
+            clue.setVisibility(View.VISIBLE);
+            guess.setText("");
+                    numberOfGuesses++;
+
+            } else if (userGuess > generatedNumber) {
+            clue.setText("lower");
+            clue.setVisibility(View.VISIBLE);
+            guess.setText("");
+            numberOfGuesses++;
+            }
+
+        }
+    }
+
